@@ -2,9 +2,9 @@
 
 let colour = document.querySelector(".colour")
 let divs = document.querySelectorAll(".cube")
-let max = 235
-let min = 20
-let distance=-20
+let max = 200
+let min = 16
+let distance=-15
 let i = 0
 //generamos funcion para sacar un numero random con margenes por arriba y abajo para que nunca nos salga un numero negativo
 function generateNumber(min,max) {
@@ -23,7 +23,7 @@ function colorRGB() {
     console.log(color);
     return "rgb" + color;
 }
-console.log(colorRGB());
+
 
 colour.style.background = colorRGB();
 
@@ -33,7 +33,7 @@ function colorRGB2(i) {
     console.log(color);
     return "rgb" + color;
 }
-console.log(colorRGB2(i));
+console.log(colorRGB(i));
 
 for (const el of divs) {
     el.style.background = colorRGB2(i);
