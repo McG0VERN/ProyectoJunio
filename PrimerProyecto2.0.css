@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+   font-family:"Schoolbell",san-serif;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 5rem 1fr 2rem;
+    text-align: center;
+    min-height: 100vh;
+    
+}
+header {
+    font-family:"Schoolbell",san-serif;
+    color: white;
+    font-size: 250% ;
+
+    background-image:url("./imagenes/pizarra.jpg");
+    border: 1px solid white;
+    grid-column: span 2;
+    grid-column: span 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+#colorToGuess {
+    color: white;
+    border: 1px solid wite;
+    background-image:url("./imagenes/pizarra.jpg");
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 5rem 5rem 5rem 1fr;
+    justify-items: center;
+    text-align: center;
+}
+.results{
+    color: black;
+}
+#colorToGuess h2 {
+    grid-column: span 2;
+    padding-top: 2rem;
+}
+
+.colour {
+    grid-column: span 2;
+    border: 1px solid black;
+    width: 100px;
+    height: 100px;
+    background-color: rgb(197, 192, 192);
+    margin-top: 3rem;
+    
+}
+
+.victories,
+.defeats {
+    border: 1px solid black;
+    width: 100%;
+    padding-top: 1.5rem;
+    background-image:url("./imagenes/brick.jpg");
+    color: black;
+    
+}
+
+#colorOptions {
+    color: white;
+    border: 1px solid black;
+    background-image:url("./imagenes/pizarra.jpg");
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 5rem 1fr 1fr 1fr;
+    justify-items: center;
+    text-align: center;
+}
+
+#colorOptions h2 {
+    grid-column: span 3;
+    padding-top: 2rem;
+}
+
+.cube {
+    margin-top: 1rem;
+    border: 1px solid black;
+    width: 70px;
+    height: 120px;
+    background-color: rgb(197, 192, 192)
+}
+    
+    .results {
+        grid-column: span 2;
+        border: 1px solid black;
+        width: 100%;
+        padding-top: 2rem;
+        background-image:url("./imagenes/brick.jpg");
+    }
+    
+    h1 {
+        grid-column: span 2;
+        font-size: 1.5rem;
+    }
+    
+    h2 {
+        font-size: 1rem;
+    }
+
+    footer {
+        border: 1px solid black;
+        grid-column: span 2;
+        font-size: 0.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    @media (min-width: 600px) {
+        .colour {
+            width: 150px;
+            height: 150px;
+        }
+    
+        .cube {
+            width: 150px;
+            height: 150px;
+        }
+    }
+@media (min-width: 1300px) {
+    .colour {
+        width: 250px;
+        height: 250px;
+    }
+
+    .cube {
+        width: 230px;
+        height: 230px;
+    }
+
+}
