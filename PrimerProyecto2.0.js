@@ -1,6 +1,7 @@
 
 "use strict"
 
+
 let colour = document.querySelector(".colour")
 let divs = document.querySelectorAll(".cube")
 let i = 0
