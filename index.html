@@ -5,11 +5,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>June Project</title>
-    <link rel="stylesheet" href="./PrimerProyecto.css">
+    <link href="https://fonts.googleapis.com/css2?family=Schoolbell&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
 </head>
 
-<body>
+<body id="body">
     <header>
         <h1>GUESS THE COLOR</h1>
     </header>
@@ -22,9 +24,12 @@
         <div class="defeats">LOSE
             <h3 class="lose">0</h3>
         </div>
+        <div class="instructions">Compare & match the sample cube on the left with the options on the right. To win the
+            game 3 matches are required. If you fail 3 times, the game is over.</div>
+        <!-- <div class="rgb"></div> -->
 
-        <div class="colour">
-            <!-- And the winner is color...... -->
+        <div class="colour">SAMPLE
+            <p class="rgb"></p>
         </div>
     </section>
     <section id="colorOptions">
@@ -39,13 +44,13 @@
         <div class="cube">Color8</div>
         <div class="cube">Color9</div>
     </section>
-    <Footer>
+    <Footer id="footer">
         <div class="Footer">
-            <h2>©️ by Cristina & Xurxo (JSB12CO)</h2>
+            <p>©️ by Cristina & Xurxo (JSB12CO)</p>
         </div>
     </Footer>
 
-    <script src="./PrimerProyecto.js"></script>
+    <script src="./script.js"></script>
 </body>
 
 </html>
