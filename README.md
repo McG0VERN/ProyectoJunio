@@ -10,4 +10,4 @@ Juego que  muestra un código de color en RGB y varias cajas de color. Tienes qu
 - Tras cada intento, el juego debe mostrar un nuevo código de color y nuevas cajas.
 - Se gana la partida cuando se llega a 3 aciertos y se pierde si se llega a 3 fallos.
 
-!(./imagenes/screenshot.jpg)
+![captura de pantalla](/imagenes/screenshot.jpg)
