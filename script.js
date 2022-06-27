@@ -5,7 +5,6 @@ let divs = document.querySelectorAll(".cube")
 let win = document.querySelector(".win")
 let lose = document.querySelector(".lose")
 let rgb = document.querySelector(".rgb")
-//let i = 0
 
 // funcion que genere un número con los limites que le fijemos
 
@@ -29,7 +28,6 @@ function colorRGB2(number1, number2, number3) {
 }
 // funcion que barajará los colores( no la posicion de los cubos que seguirá siendo la misma). Asigna un color "similar" al sample a cada uno de los cubos.
 function shuffle() {
-    //i = 0 // cada vez que barajemos i siempre sera cero para asegurarnos de que la variacion de i+=3 no va aumentando hasta el infinito, lo que nos generaria tonalidades pŕoximas al blanco
     let number1 = generateNumber(20, 200)
     let number2 = generateNumber(20, 200)
     let number3 = generateNumber(20, 200)
@@ -51,7 +49,6 @@ function shuffle() {
             el.style.background = colorRGB(number1 + 2, number2 + 2, number3 + 2);
         }
         console.log(el.style.background);
-        //i += 3
     }
 }
 
