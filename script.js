@@ -5,7 +5,7 @@ let divs = document.querySelectorAll(".cube")
 let win = document.querySelector(".win")
 let lose = document.querySelector(".lose")
 let rgb = document.querySelector(".rgb")
-let i = 0
+//let i = 0
 
 // funcion que genere un número con los limites que le fijemos
 
@@ -19,19 +19,20 @@ function colorRGB(number1, number2, number3) {
     return color;
 }
 // funcion que nos devolverá el codigo rgb con una variacion
-function colorRGB2(i, number1, number2, number3) {
+function colorRGB2(number1, number2, number3) {
     colour.style.background = colorRGB();
     //console.log(number1, number2, number3);
-    let distance = -12 // metiendo un distance con este valor, conseguimos que el cubo a seleccionar sea siempre uno de los colores intermedios, por lo que es más dificil encontrarlo
-    let color = "rgb(" + (number1 + distance + i) + ", " + (number2 + distance + i) + ", " + (number3 + distance + i) + ")";
+    let distance = generateNumber(-20, 20) // metiendo un distance entre estos valores, conseguimos que el cubo a seleccionar no sea siempre ni el color más claro ni el más oscuro, por lo que es más dificil encontrarlo
+    console.log(distance);
+    let color = "rgb(" + (number1 + distance) + ", " + (number2 + distance) + ", " + (number3 + distance) + ")";
     return color;
 }
 // funcion que barajará los colores( no la posicion de los cubos que seguirá siendo la misma). Asigna un color "similar" al sample a cada uno de los cubos.
 function shuffle() {
-    i = 0 // cada vez que barajemos i siempre sera cero para asegurarnos de que la variacion de i+=3 no va aumentando hasta el infinito, lo que nos generaria tonalidades pŕoximas al blanco
-    let number1 = generateNumber(12, 200)
-    let number2 = generateNumber(12, 200)
-    let number3 = generateNumber(12, 200)
+    //i = 0 // cada vez que barajemos i siempre sera cero para asegurarnos de que la variacion de i+=3 no va aumentando hasta el infinito, lo que nos generaria tonalidades pŕoximas al blanco
+    let number1 = generateNumber(20, 200)
+    let number2 = generateNumber(20, 200)
+    let number3 = generateNumber(20, 200)
     let color = "rgb(" + number1 + "," + number2 + "," + number3 + ")";
     rgb.textContent = color
     let secretPosition = generateNumber(1, 9) //variable que nos creará una posicion aleatoria de entre los 9 cubos.
@@ -44,13 +45,13 @@ function shuffle() {
         if (position === secretPosition) { // si la ubicación del cubo es la misma que la posición aleatoria , lo pintamos igual al SAMPLE
             el.style.background = colorRGB(number1, number2, number3);
         } else { // sino.. le metes un color aleatorio
-            el.style.background = colorRGB2(i, number1, number2, number3);
+            el.style.background = colorRGB2(number1, number2, number3);
         }
-        if (position !== secretPosition && el.style.background === colorRGB(number1, number2, number3)) { // debido a tener un distance -12 para que el color a elegir sea siempre un color intermedio con el i+=3 teníamos siempre dos opciones con el color a elegir, para eliminar una de ellas indicamos que si la ubicación del cubo es distinta que la posición aleatoria y el background del elemento es igual al color a elegir, nos modifique el valor final para tener siempre una única respuesta posible.
-            el.style.background = colorRGB2(i, number1 + 2, number2 + 2, number3 + 2);
+        if (position !== secretPosition && el.style.background === colorRGB(number1, number2, number3)) { // debido a tener un distance aleatorio, cabía la posibilidad de que hubiese más de una respuesta correcta, para eliminar todas menos la que queremos indicamos que si la ubicación del cubo es distinta que la posición aleatoria y el background del elemento es igual al color a elegir, nos modifique el valor final para tener siempre una única respuesta posible. Esta fórmula no es válida para el navegador Firefox, por lo que en este navegador en concreto puede darse el caso de que haya más de una respuesta posible
+            el.style.background = colorRGB(number1 + 2, number2 + 2, number3 + 2);
         }
         console.log(el.style.background);
-        i += 3
+        //i += 3
     }
 }
 
