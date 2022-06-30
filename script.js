@@ -45,8 +45,8 @@ function shuffle() {
         } else { // sino.. le metes un color aleatorio
             el.style.background = colorRGB2(number1, number2, number3);
         }
-        if (position !== secretPosition && el.style.background === colorRGB(number1, number2, number3)) { // debido a tener un distance aleatorio, cabía la posibilidad de que hubiese más de una respuesta correcta, para eliminar todas menos la que queremos indicamos que si la ubicación del cubo es distinta que la posición aleatoria y el background del elemento es igual al color a elegir, nos modifique el valor final para tener siempre una única respuesta posible. Esta fórmula no es válida para el navegador Firefox, por lo que en este navegador en concreto puede darse el caso de que haya más de una respuesta posible
-            el.style.background = colorRGB(number1 + 2, number2 + 2, number3 + 2);
+        if (position !== secretPosition && el.style.backgroundColor === colorRGB(number1, number2, number3)) { // debido a tener un distance aleatorio, cabía la posibilidad de que hubiese más de una respuesta correcta, para eliminar todas menos la que queremos indicamos que si la ubicación del cubo es distinta que la posición aleatoria y el background del elemento es igual al color a elegir, nos modifique el valor final para tener siempre una única respuesta posible. Esta fórmula ha sido modificada para el navegador Firefox.
+            el.style.backgroundColor = colorRGB(number1 + 2, number2 + 2, number3 + 2);
         }
         console.log(el.style.background);
     }
